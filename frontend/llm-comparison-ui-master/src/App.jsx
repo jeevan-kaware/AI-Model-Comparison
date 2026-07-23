@@ -24,7 +24,9 @@ const models = [
   const fetchModelResponse = useCallback(async (model, prompt) => {
     try {
       const encodedPrompt = encodeURIComponent(prompt);
-      const response = await fetch(`http://localhost:8080/api/${model}/${encodedPrompt}`);
+     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const response = await fetch(
+  `${API_BASE_URL}/api/${model}/${encodedPrompt}`);
       
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
