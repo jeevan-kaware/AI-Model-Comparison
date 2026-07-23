@@ -22,6 +22,11 @@ const models = [
   }, []);
 
   const fetchModelResponse = useCallback(async (model, prompt) => {
+     if (model === "ollama") {
+    return `⚠️ Ollama is available only in the local development environment.
+
+This live deployment uses Google Gemini API because Ollama requires a local runtime.`;
+  }
     try {
       const encodedPrompt = encodeURIComponent(prompt);
      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
