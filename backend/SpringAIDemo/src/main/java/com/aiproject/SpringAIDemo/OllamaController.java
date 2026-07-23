@@ -5,9 +5,12 @@ import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://ai-model-comparison-gamma.vercel.app"
+})
 @RestController
 @RequestMapping("/api/ollama")
-@CrossOrigin(origins = "http://localhost:5173/")
 public class OllamaController {
 
     private ChatClient chatClient;
