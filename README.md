@@ -47,12 +47,25 @@ Currently, the project integrates:
 - Google Gemini API
 - Ollama Local Models
 - Gemma 2 (Local)
+> **Note**
+>
+> The deployed web demo uses **Google Gemini API**.
+> **Ollama (Gemma 2)** integration is available only in the local development environment because it requires a locally running Ollama runtime.
 
 This project demonstrates practical implementation of Spring AI with multiple providers and showcases how different AI models respond to the same question.
 
 The frontend provides a clean and responsive interface where users can enter a prompt, select the comparison order, and instantly receive responses from multiple AI models.
 
 This project follows a clean backend architecture and can be extended easily by integrating additional LLM providers such as OpenAI, Anthropic Claude, Mistral AI, Groq, DeepSeek, Azure OpenAI, and more.
+
+---
+# ⚠️ Deployment Note
+
+The deployed version demonstrates **Google Gemini API**.
+
+The **Ollama (Gemma 2)** integration is fully implemented but works only in the local development environment because Ollama requires a locally running runtime.
+
+To experience the complete AI model comparison, clone the repository and run Ollama locally.
 
 ---
 
@@ -86,6 +99,7 @@ This project follows a clean backend architecture and can be extended easily by 
 - Privacy Friendly
 - No Cloud Dependency
 
+> Available in local development only.
 ---
 
 ## 🎨 Frontend Features
@@ -219,7 +233,7 @@ Frontend Comparison Screen
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/api/gemini?message=` | Generate response using Google Gemini |
+| GET | `/api/gemini/Explain Spring Boot` | Generate response using Google Gemini |
 
 ---
 
@@ -275,6 +289,26 @@ git clone https://github.com/jeevan-kaware/AI-Model-Comparison.git
 ```bash
 cd AI-Model-Comparison
 ```
+---
+---
+
+# 🐳 Docker Deployment
+
+This project supports Docker-based backend deployment.
+
+## Build Docker Image
+
+```bash
+docker build -t ai-model-comparison .
+```
+
+## Run Docker Container
+
+```bash
+docker run -p 8080:8080 ai-model-comparison
+```
+
+> Ensure the required environment variables (such as the Gemini API key) are configured before running the container.
 
 ---
 
@@ -347,6 +381,7 @@ spring.ai.google.genai.chat.options.model=gemini-2.5-flash
 ```
 
 ---
+> This setup is required only for local development.
 
 # 🦙 Configure Ollama
 
@@ -379,8 +414,7 @@ http://localhost:11434
 ```properties
 spring.application.name=SpringAIDemo
 
-server.port=8080
-
+server.port=${PORT:8080}
 spring.ai.google.genai.api-key=YOUR_GEMINI_API_KEY
 
 spring.ai.google.genai.chat.options.model=gemini-2.5-flash
@@ -487,6 +521,25 @@ Frontend displays comparison
 - Production Ready Structure
 
 ---
+
+---
+
+# 🌍 Live Demo
+
+## 🚀 Frontend (Vercel)
+
+https://ai-model-comparison-gamma.vercel.app
+
+## ⚙️ Backend (Render)
+
+https://ai-model-comparison-sym8.onrender.com
+
+> **Note**
+>
+> The online demo showcases Google Gemini integration.
+> Ollama requires a local runtime and is available only in the local development environment.
+
+---
 ---
 
 # 📸 Screenshots
@@ -579,37 +632,6 @@ Display Results on UI
 
 ---
 
-# 📂 Project Structure
-
-```text
-AI-Model-Comparison
-│
-├── backend
-│   └── SpringAIDemo
-│       ├── src
-│       │   ├── controller
-│       │   ├── service
-│       │   ├── config
-│       │   ├── dto
-│       │   ├── resources
-│       │   └── SpringAiDemoApplication
-│       ├── pom.xml
-│       └── mvnw
-│
-├── frontend
-│   └── llm-comparison-ui-master
-│       ├── src
-│       │   ├── components
-│       │   ├── pages
-│       │   ├── assets
-│       │   └── App.jsx
-│       ├── package.json
-│       └── vite.config.js
-│
-├── screenshots
-└── README.md
-```
-
 ---
 
 # 📖 Learning Outcomes
@@ -624,7 +646,6 @@ This project helped me gain practical experience with:
 - Google Gemini API
 - Ollama Local LLM
 - Gemma 2 Model
-- TinyLlama Model
 - React.js
 - Vite
 - Axios
@@ -650,7 +671,11 @@ This project helped me gain practical experience with:
 - Markdown Rendering
 - Code Syntax Highlighting
 - Authentication
-- Docker Support
+- OpenRouter Integration
+- Groq Integration
+- Model Performance Metrics
+- Dark Mode
+- Prompt History
 - Kubernetes Deployment
 - CI/CD Pipeline
 - Cloud Deployment
