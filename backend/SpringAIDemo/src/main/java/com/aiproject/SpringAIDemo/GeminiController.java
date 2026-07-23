@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/gemini")
-@CrossOrigin(origins = "http://localhost:5173/")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://ai-model-comparison-gamma.vercel.app"
+})
 public class GeminiController {
 
     private final ChatClient chatClient;
