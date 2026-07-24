@@ -68,7 +68,24 @@ The **Ollama (Gemma 2)** integration is fully implemented but works only in the 
 To experience the complete AI model comparison, clone the repository and run Ollama locally.
 
 ---
+---
 
+# 🌍 Live Demo
+
+## 🚀 Frontend (Vercel)
+
+https://ai-model-comparison-gamma.vercel.app
+
+## ⚙️ Backend (Render)
+
+https://ai-model-comparison-sym8.onrender.com
+
+> **Note**
+>
+> The online demo showcases Google Gemini integration.
+> Ollama requires a local runtime and is available only in the local development environment.
+
+---
 # ✨ Features
 
 ## 🤖 AI Model Comparison
@@ -522,24 +539,7 @@ Frontend displays comparison
 
 ---
 
----
 
-# 🌍 Live Demo
-
-## 🚀 Frontend (Vercel)
-
-https://ai-model-comparison-gamma.vercel.app
-
-## ⚙️ Backend (Render)
-
-https://ai-model-comparison-sym8.onrender.com
-
-> **Note**
->
-> The online demo showcases Google Gemini integration.
-> Ollama requires a local runtime and is available only in the local development environment.
-
----
 ---
 
 # 📸 Screenshots
